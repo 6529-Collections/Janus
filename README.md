@@ -516,9 +516,7 @@ The `ITEM_SORT_WALLETS_BY_UNIQUE_TOKENS_COUNT` operation is designed to arrange 
 
 ###### Overview
 
-TDH is Total Days Held \*
-
-The `ITEM_SORT_WALLETS_BY_MEMES_TDH` operation streamlines tokens within an item based on the MEMES boosted TDH (Token Distribution History) score of each wallet. By leveraging the TDH snapshot at a specified block number, this operation allows users to organize and prioritize wallets based on their TDH score within the MEMES ecosystem.
+The `ITEM_SORT_WALLETS_BY_MEMES_TDH` operation streamlines tokens within an item based on the MEMES boosted TDH (Total Days Held)\* score of each wallet. By leveraging the TDH snapshot at a specified block number, this operation allows users to organize and prioritize wallets based on their TDH score within the MEMES ecosystem.
 
 ###### Parameters
 
