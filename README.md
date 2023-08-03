@@ -3,83 +3,86 @@
   - [Introducing Janus Operations](#introducing-janus-operations)
     - [Why Operations?](#why-operations)
     - [Utilizing Janus Operations](#utilizing-janus-operations)
-      - [CREATE_ALLOWLIST Operation](#create_allowlist-operation)
+      - [CREATE\_ALLOWLIST Operation](#create_allowlist-operation)
         - [Overview](#overview)
         - [Parameters](#parameters)
-      - [GET_COLLECTION_TRANSFERS Operation](#get_collection_transfers-operation)
+      - [GET\_COLLECTION\_TRANSFERS Operation](#get_collection_transfers-operation)
         - [Overview](#overview-1)
         - [Parameters](#parameters-1)
-      - [TRANSFER_POOL_CONSOLIDATE_WALLETS Operation](#transfer_pool_consolidate_wallets-operation)
+      - [TRANSFER\_POOL\_CONSOLIDATE\_WALLETS Operation](#transfer_pool_consolidate_wallets-operation)
         - [Overview](#overview-2)
         - [Parameters](#parameters-2)
-      - [CREATE_TOKEN_POOL Operation](#create_token_pool-operation)
+      - [CREATE\_TOKEN\_POOL Operation](#create_token_pool-operation)
         - [Overview](#overview-3)
         - [Parameters](#parameters-3)
-      - [TOKEN_POOL_CONSOLIDATE_WALLETS Operation](#token_pool_consolidate_wallets-operation)
+      - [TOKEN\_POOL\_CONSOLIDATE\_WALLETS Operation](#token_pool_consolidate_wallets-operation)
         - [Overview](#overview-4)
         - [Parameters](#parameters-4)
-      - [CREATE_CUSTOM_TOKEN_POOL Operation](#create_custom_token_pool-operation)
+      - [CREATE\_CUSTOM\_TOKEN\_POOL Operation](#create_custom_token_pool-operation)
         - [Overview](#overview-5)
         - [Parameters](#parameters-5)
-      - [CREATE_WALLET_POOL Operation](#create_wallet_pool-operation)
+      - [CREATE\_WALLET\_POOL Operation](#create_wallet_pool-operation)
         - [Overview](#overview-6)
         - [Parameters](#parameters-6)
-      - [ADD_PHASE Operation](#add_phase-operation)
+      - [ADD\_PHASE Operation](#add_phase-operation)
         - [Overview](#overview-7)
         - [Parameters](#parameters-7)
-      - [ADD_COMPONENT Operation](#add_component-operation)
+      - [ADD\_COMPONENT Operation](#add_component-operation)
         - [Overview](#overview-8)
         - [Parameters](#parameters-8)
-      - [ADD_ITEM Operation](#add_item-operation)
+      - [ADD\_ITEM Operation](#add_item-operation)
         - [Overview](#overview-9)
         - [Parameters](#parameters-9)
       - [Building Blocks of the Distribution Plan](#building-blocks-of-the-distribution-plan)
         - [Modifying the Distribution Plan State](#modifying-the-distribution-plan-state)
-      - [ITEM_EXCLUDE_TOKEN_IDS Operation](#item_exclude_token_ids-operation)
+      - [ITEM\_EXCLUDE\_TOKEN\_IDS Operation](#item_exclude_token_ids-operation)
         - [Overview](#overview-10)
         - [Parameters](#parameters-10)
-      - [ITEM_SELECT_TOKEN_IDS Operation](#item_select_token_ids-operation)
+      - [ITEM\_SELECT\_TOKEN\_IDS Operation](#item_select_token_ids-operation)
         - [Overview](#overview-11)
         - [Parameters](#parameters-11)
-      - [ITEM_SORT_WALLETS_BY_TOTAL_TOKENS_COUNT Operation](#item_sort_wallets_by_total_tokens_count-operation)
+      - [ITEM\_SORT\_WALLETS\_BY\_TOTAL\_TOKENS\_COUNT Operation](#item_sort_wallets_by_total_tokens_count-operation)
         - [Overview](#overview-12)
         - [Parameters](#parameters-12)
-      - [ITEM_SORT_WALLETS_BY_UNIQUE_TOKENS_COUNT Operation](#item_sort_wallets_by_unique_tokens_count-operation)
+      - [ITEM\_SORT\_WALLETS\_BY\_UNIQUE\_TOKENS\_COUNT Operation](#item_sort_wallets_by_unique_tokens_count-operation)
         - [Overview](#overview-13)
         - [Parameters](#parameters-13)
-      - [ITEM_SORT_WALLETS_BY_MEMES_TDH Operation](#item_sort_wallets_by_memes_tdh-operation)
+      - [ITEM\_SORT\_WALLETS\_BY\_MEMES\_TDH Operation](#item_sort_wallets_by_memes_tdh-operation)
         - [Overview](#overview-14)
         - [Parameters](#parameters-14)
-      - [ITEM_REMOVE_FIRST_N_TOKENS Operation](#item_remove_first_n_tokens-operation)
+      - [ITEM\_REMOVE\_FIRST\_N\_TOKENS Operation](#item_remove_first_n_tokens-operation)
         - [Overview](#overview-15)
         - [Parameters](#parameters-15)
-      - [ITEM_REMOVE_LAST_N_TOKENS Operation](#item_remove_last_n_tokens-operation)
+      - [ITEM\_REMOVE\_LAST\_N\_TOKENS Operation](#item_remove_last_n_tokens-operation)
         - [Overview](#overview-16)
         - [Parameters](#parameters-16)
-      - [ITEM_SELECT_FIRST_N_TOKENS Operation](#item_select_first_n_tokens-operation)
+      - [ITEM\_SELECT\_FIRST\_N\_TOKENS Operation](#item_select_first_n_tokens-operation)
         - [Overview](#overview-17)
         - [Parameters](#parameters-17)
-      - [ITEM_SELECT_LAST_N_TOKENS Operation](#item_select_last_n_tokens-operation)
+      - [ITEM\_SELECT\_LAST\_N\_TOKENS Operation](#item_select_last_n_tokens-operation)
         - [Overview](#overview-18)
         - [Parameters](#parameters-18)
-      - [ITEM_REMOVE_FIRST_N_WALLETS Operation](#item_remove_first_n_wallets-operation)
+      - [ITEM\_REMOVE\_FIRST\_N\_WALLETS Operation](#item_remove_first_n_wallets-operation)
         - [Overview](#overview-19)
         - [Parameters](#parameters-19)
-      - [ITEM_SELECT_FIRST_N_WALLETS Operation](#item_select_first_n_wallets-operation)
+      - [ITEM\_SELECT\_FIRST\_N\_WALLETS Operation](#item_select_first_n_wallets-operation)
         - [Overview](#overview-20)
         - [Parameters](#parameters-20)
-      - [ITEM_REMOVE_WALLETS_FROM_CERTAIN_COMPONENTS Operation](#item_remove_wallets_from_certain_components-operation)
+      - [ITEM\_REMOVE\_WALLETS\_FROM\_CERTAIN\_COMPONENTS Operation](#item_remove_wallets_from_certain_components-operation)
         - [Overview](#overview-21)
         - [Parameters](#parameters-21)
-      - [COMPONENT_SELECT_RANDOM_WALLETS Operation](#component_select_random_wallets-operation)
+      - [ITEM\_REMOVE\_WALLETS\_FROM\_CERTAIN\_TOKEN\_POOLS Operation](#item_remove_wallets_from_certain_token_pools-operation)
         - [Overview](#overview-22)
         - [Parameters](#parameters-22)
-      - [COMPONENT_SELECT_RANDOM_PERCENTAGE_WALLETS Operation](#component_select_random_percentage_wallets-operation)
+      - [COMPONENT\_SELECT\_RANDOM\_WALLETS Operation](#component_select_random_wallets-operation)
         - [Overview](#overview-23)
         - [Parameters](#parameters-23)
-      - [COMPONENT_ADD_SPOTS_TO_ALL_ITEM_WALLETS Operation](#component_add_spots_to_all_item_wallets-operation)
+      - [COMPONENT\_SELECT\_RANDOM\_PERCENTAGE\_WALLETS Operation](#component_select_random_percentage_wallets-operation)
         - [Overview](#overview-24)
         - [Parameters](#parameters-24)
+      - [COMPONENT\_ADD\_SPOTS\_TO\_ALL\_ITEM\_WALLETS Operation](#component_add_spots_to_all_item_wallets-operation)
+        - [Overview](#overview-25)
+        - [Parameters](#parameters-25)
 
 ## Introduction to Janus: The Embedded DSL for NFT Distribution Plans
 
@@ -671,6 +674,37 @@ The `ITEM_REMOVE_WALLETS_FROM_CERTAIN_COMPONENTS` operation lets users refine an
   - **Description**: An array of component IDs which are used to identify wallets that have already been allocated spots.
   - **Requirements**:
     - Each component ID in the array should be a valid string, referencing existing components within Janus.
+
+##### ITEM_REMOVE_WALLETS_FROM_CERTAIN_TOKEN_POOLS Operation
+
+###### Overview
+
+The `ITEM_REMOVE_WALLETS_FROM_CERTAIN_TOKEN_POOLS` operation allows users to refine an item's token list by excluding wallets that are associated with the specified token pools.
+
+###### Parameters
+
+- **itemId (String)**
+
+  - **Description**: The unique identifier of the item that needs refinement.
+  - **Requirements**:
+    - Must be a valid string, referencing an existing item in the Janus system.
+
+- **pools (Object Array)**
+
+  - **Description**: An array of pools from which wallets will be removed. Each pool object contains:
+
+    - **poolType (String)**
+
+      - **Description**: Specifies the type of the pool.
+      - **Valid Values**:
+        - `TOKEN_POOL`
+        - `CUSTOM_TOKEN_POOL`
+        - `WALLET_POOL`
+
+    - **poolId (String)**
+      - **Description**: The unique identifier for the token or wallet pool.
+      - **Requirements**:
+        - Must be a valid string, referencing an existing pool within Janus.
 
 ##### COMPONENT_SELECT_RANDOM_WALLETS Operation
 
