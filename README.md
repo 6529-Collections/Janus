@@ -86,31 +86,27 @@
 
 ## Introduction to Janus: The Embedded DSL for NFT Distribution Plans
 
-Welcome to the official documentation for Janus, an innovative embedded Domain Specific Language (DSL) designed exclusively for creating robust and versatile NFT (Non-Fungible Token) distribution plans. Embedded seamlessly within the JavaScript ecosystem, Janus provides developers intuitive approach to create distribution strategies.
+Welcome to the official documentation for Janus, a Domain Specific Language (DSL) designed exclusively for creating robust and versatile NFT (Non-Fungible Token) distribution plans. Built with JavaScript, Janus provides developers with a straightforward approach to creating deeply customized distribution strategies.
 
 ### What is a DSL?
 
-A Domain Specific Language (DSL) is a specialized computer language crafted for a specific application domain. Unlike general-purpose languages, which are designed to solve a wide range of problems, DSLs are tailored to a particular set of tasks, offering optimized solutions for those specific scenarios. This focused nature of DSLs often results in more concise, readable, and expressive code for the given domain, making them a preferred choice for industries and sectors that require specialized computational tasks.
+A Domain Specific Language (DSL) is a specialized set of programmatic functions crafted for a specific problem domain. More focused than general-purpose languages, designed to solve a wide range of problems, DSLs are tailored to a particular set of tasks, offering optimized solutions for those specific scenarios. This focused nature of DSLs often results in more concise, readable, and expressive code for the given domain, making them a preferred choice for sectors that require specialized computational tasks.
 
 ### Introducing Janus Operations
 
-In the vast landscape of NFT distribution, the dynamic capabilities of Janus come to life through its operations. These are the core constructs that enable developers to define, refine, and execute their distribution plans. But what exactly are Janus operations, and why are they paramount to the Janus experience?
+When building an NFT distribution plan, numerous specific operations come into play. These are the core constructs that enable developers to define, refine, and execute potentially complex distribution plans. 
 
-#### Why Operations?
+Operations expressively dictate how actions are carried out, how data flows, and how outcomes are produced. For NFT distribution, this means determining who gets what, when, and under which conditions. Operations help convert plain-language descriptions into running code.
 
-At the heart of any system, operations dictate how actions are carried out, how data flows, and how outcomes are produced. For NFT distribution, this means determining who gets what, when, and under which conditions. Without operations, we would merely have a static representation of data, devoid of any actionable insights or systematic procedures.
+Operations become the building blocks of your distribution plan. By assembling the right combination of desired operations, your code can programmatically handle multiphase allowlists based on a wide number of criteria you select.
 
-#### Utilizing Janus Operations
+#### CREATE_ALLOWLIST Operation
 
-As we delve deeper into this documentation, you'll encounter a range of operations, each with its unique purpose and functionality. They become the building blocks, the nuts and bolts, of your distribution plan. By understanding and harnessing these operations, you are able to create any distribution plan
-
-##### CREATE_ALLOWLIST Operation
-
-###### Overview
+##### Overview
 
 The `CREATE_ALLOWLIST` operation serves as the foundational stone for curating allowlists within the Janus NFT distribution system. Similar to the main function in numerous programming languages, this operation not only kickstarts the allowlist creation but also ensures that a structured, identifiable, and descriptive scaffold is in place for subsequent operations.
 
-###### Parameters
+##### Parameters
 
 - **id (String)**:
   - **Description**: A unique identifier for the allowlist.
@@ -128,13 +124,13 @@ The `CREATE_ALLOWLIST` operation serves as the foundational stone for curating a
   - **Requirements**:
     - Must be a valid string.
 
-##### GET_COLLECTION_TRANSFERS Operation
+#### GET_COLLECTION_TRANSFERS Operation
 
-###### Overview
+##### Overview
 
 The `GET_COLLECTION_TRANSFERS` operation is fetching a list of NFT transfers (transfer pool) associated with a specified contract. This operation downloads transfers up to a provided block number.
 
-###### Parameters
+##### Parameters
 
 - **id (String)**:
   - **Description**: A unique identifier for the downloaded transfers.
@@ -161,13 +157,13 @@ The `GET_COLLECTION_TRANSFERS` operation is fetching a list of NFT transfers (tr
     - Must be a valid numerical value.
     - Represents the upper limit, ensuring that transfers are only retrieved up to this specific block.
 
-##### TRANSFER_POOL_CONSOLIDATE_WALLETS Operation
+#### TRANSFER_POOL_CONSOLIDATE_WALLETS Operation
 
-###### Overview
+##### Overview
 
 The `TRANSFER_POOL_CONSOLIDATE_WALLETS` operation is employed for consolidating wallets by leveraging the delegation tool's consolidations as captured in a specified snapshot block.
 
-###### Parameters
+##### Parameters
 
 - **transferPoolId (String)**
 
@@ -181,13 +177,13 @@ The `TRANSFER_POOL_CONSOLIDATE_WALLETS` operation is employed for consolidating 
     - Must be a positive integer.
     - Should reference a valid block number in the blockchain.
 
-##### CREATE_TOKEN_POOL Operation
+#### CREATE_TOKEN_POOL Operation
 
-###### Overview
+##### Overview
 
 The `CREATE_TOKEN_POOL` operation offers a structured approach to curate a dedicated pool of NFT tokens. This tool provides the flexibility to consolidate wallet holdings, focus on specific token IDs, and define a specific blockchain depth, encapsulated by the block number.
 
-###### Parameters
+##### Parameters
 
 - **id (String)**
 
@@ -237,13 +233,13 @@ The `CREATE_TOKEN_POOL` operation offers a structured approach to curate a dedic
     - Comma-separated string of token IDs (example: 1,2,3,4-10,12)
     - If provided, only these specific tokens are curated into the pool.
 
-##### TOKEN_POOL_CONSOLIDATE_WALLETS Operation
+#### TOKEN_POOL_CONSOLIDATE_WALLETS Operation
 
-###### Overview
+##### Overview
 
 The `TOKEN_POOL_CONSOLIDATE_WALLETS` operation streamlines the wallets within a token pool using the advanced mechanisms of the delegation tool's consolidations, anchored at a specified snapshot block.
 
-###### Parameters
+##### Parameters
 
 - **tokenPoolId (String)**
 
@@ -257,13 +253,13 @@ The `TOKEN_POOL_CONSOLIDATE_WALLETS` operation streamlines the wallets within a 
     - Must be a positive integer.
     - Should correlate to a legitimate block number on the blockchain.
 
-##### CREATE_CUSTOM_TOKEN_POOL Operation
+#### CREATE_CUSTOM_TOKEN_POOL Operation
 
-###### Overview
+##### Overview
 
 The `CREATE_CUSTOM_TOKEN_POOL` operation empowers users to curate a personalized pool of NFT tokens based on specific input criteria. Unlike the standard token pool, this custom operation allows for a more granular approach, where the emphasis is on explicit token owners and optional token IDs. In the absence of provided IDs, Janus takes the initiative, sequentially assigning IDs in the order of their listing: 1, 2, 3, and so forth.
 
-###### Parameters
+##### Parameters
 
 - **id (String)**
 
@@ -299,13 +295,13 @@ The `CREATE_CUSTOM_TOKEN_POOL` operation empowers users to curate a personalized
         - Must be a valid string if provided.
         - In the absence of an ID, Janus will automatically assign an ID based on the token's order: 1, 2, 3, etc.
 
-##### CREATE_WALLET_POOL Operation
+#### CREATE_WALLET_POOL Operation
 
-###### Overview
+##### Overview
 
 The `CREATE_WALLET_POOL` operation is designed to curate and consolidate a specific set of wallet addresses. By centralizing these addresses into a pool, users can conveniently manage and reference them for subsequent modifications or operations within the Janus ecosystem.
 
-###### Parameters
+##### Parameters
 
 - **id (String)**
 
@@ -332,13 +328,13 @@ The `CREATE_WALLET_POOL` operation is designed to curate and consolidate a speci
     - An array of valid wallet addresses.
     - Each wallet address should be unique within the array.
 
-##### ADD_PHASE Operation
+#### ADD_PHASE Operation
 
-###### Overview
+##### Overview
 
 The `ADD_PHASE` operation introduces a structured phase or stage within distribution plan.
 
-###### Parameters
+##### Parameters
 
 - **id (String)**
 
@@ -358,13 +354,13 @@ The `ADD_PHASE` operation introduces a structured phase or stage within distribu
   - **Requirements**:
     - Must be a valid string.
 
-##### ADD_COMPONENT Operation
+#### ADD_COMPONENT Operation
 
-###### Overview
+##### Overview
 
 The `ADD_COMPONENT` operation allowing users to create distinct components, or snapshot groups, within a defined phase.
 
-###### Parameters
+##### Parameters
 
 - **id (String)**
 
@@ -390,13 +386,13 @@ The `ADD_COMPONENT` operation allowing users to create distinct components, or s
   - **Requirements**:
     - Must be a valid string, corresponding to an existing phase within the system.
 
-##### ADD_ITEM Operation
+#### ADD_ITEM Operation
 
-###### Overview
+##### Overview
 
 The `ADD_ITEM` operation allows users to integrate specific snapshot or token pools directly into a designated component.
 
-###### Parameters
+##### Parameters
 
 - **id (String)**
 
@@ -437,25 +433,25 @@ The `ADD_ITEM` operation allows users to integrate specific snapshot or token po
 
 ---
 
-##### Building Blocks of the Distribution Plan
+#### Building Blocks of the Distribution Plan
 
-The aforementioned operations serve as the foundational building blocks for crafting a precise and efficient NFT distribution plan. They allow for the definition and organization of pivotal snapshots and the overarching structure, encapsulated within distinct phases. By utilizing these operations, users can shape the blueprint of their distribution plan with accuracy and foresight.
+The aforementioned operations serve as the foundational building blocks for crafting a precise and efficient NFT distribution plan. They allow for the definition and organization of pivotal snapshots and the overarching structure, encapsulated within distinct phases. By utilizing these operations, users can shape the blueprint of their distribution.
 
 ---
 
-###### Modifying the Distribution Plan State
+##### Modifying the Distribution Plan State
 
 While the initial operations provide structure and content, subsequent operations empower users to modify and fine-tune the state of their distribution plan.
 
 ---
 
-##### ITEM_EXCLUDE_TOKEN_IDS Operation
+#### ITEM_EXCLUDE_TOKEN_IDS Operation
 
-###### Overview
+##### Overview
 
 The `ITEM_EXCLUDE_TOKEN_IDS` operation introduces a dynamic filtering mechanism within the Janus system. With this operation, users can selectively remove specific tokens from an item based on their token IDs. This becomes especially valuable when certain tokens within an item need to be excluded due to varied reasons, such as changes in strategy, exclusivity criteria, or data refinement.
 
-###### Parameters
+##### Parameters
 
 - **itemId (String)**
 
@@ -469,13 +465,13 @@ The `ITEM_EXCLUDE_TOKEN_IDS` operation introduces a dynamic filtering mechanism 
   - **Requirements**:
     - Must adhere to the defined format.
 
-##### ITEM_SELECT_TOKEN_IDS Operation
+#### ITEM_SELECT_TOKEN_IDS Operation
 
-###### Overview
+##### Overview
 
 The `ITEM_SELECT_TOKEN_IDS` operation provides an inverse functionality to its exclusion counterpart. By using this operation, users can explicitly specify which tokens they wish to retain within an item based on their token IDs. This allows for a targeted approach, ensuring that only the most relevant or desired tokens remain a part of the item, thereby streamlining the content to match strategic needs or criteria.
 
-###### Parameters
+##### Parameters
 
 - **itemId (String)**
 
@@ -489,39 +485,39 @@ The `ITEM_SELECT_TOKEN_IDS` operation provides an inverse functionality to its e
   - **Requirements**:
     - Must conform to the prescribed format.
 
-##### ITEM_SORT_WALLETS_BY_TOTAL_TOKENS_COUNT Operation
+#### ITEM_SORT_WALLETS_BY_TOTAL_TOKENS_COUNT Operation
 
-###### Overview
+##### Overview
 
 The `ITEM_SORT_WALLETS_BY_TOTAL_TOKENS_COUNT` operation introduces a mechanism to organize tokens within an item based on the cumulative count of tokens associated with each owner or wallet. By doing so, it facilitates an ordered perspective, making it easier for users to identify and engage with wallets based on their token abundance within a specific item.
 
-###### Parameters
+##### Parameters
 
 - **itemId (String)**
   - **Description**: The unique identifier of the item whose tokens are to be sorted.
   - **Requirements**:
     - Must be a valid string, referencing an existing item in the Janus system.
 
-##### ITEM_SORT_WALLETS_BY_UNIQUE_TOKENS_COUNT Operation
+#### ITEM_SORT_WALLETS_BY_UNIQUE_TOKENS_COUNT Operation
 
-###### Overview
+##### Overview
 
 The `ITEM_SORT_WALLETS_BY_UNIQUE_TOKENS_COUNT` operation is designed to arrange tokens within an item based on the unique count of tokens owned by each wallet. This sorting method emphasizes the diversity of token ownership, allowing users to prioritize and engage with wallets that possess a varied set of unique tokens within the specified item.
 
-###### Parameters
+##### Parameters
 
 - **itemId (String)**
   - **Description**: The unique identifier of the item to be sorted.
   - **Requirements**:
     - Must be a valid string, referencing an existing item in the Janus system.
 
-##### ITEM_SORT_WALLETS_BY_MEMES_TDH Operation
+#### ITEM_SORT_WALLETS_BY_MEMES_TDH Operation
 
-###### Overview
+##### Overview
 
 The `ITEM_SORT_WALLETS_BY_MEMES_TDH` operation streamlines tokens within an item based on the MEMES TDH (Total Days Held)\* score of each wallet. By leveraging the TDH snapshot at a specified block number, this operation allows users to organize and prioritize wallets based on their TDH score within the MEMES ecosystem.
 
-###### Parameters
+##### Parameters
 
 - **itemId (String)**
 
@@ -536,13 +532,13 @@ The `ITEM_SORT_WALLETS_BY_MEMES_TDH` operation streamlines tokens within an item
 
 \* TDH (Total Days Held) is a custom metric used within The Memes project to identify long-term collectors of the Memes. TDH version 1.1 is currently being used by Janus. More info at https://seize.io/community-metrics
 
-##### ITEM_REMOVE_FIRST_N_TOKENS Operation
+#### ITEM_REMOVE_FIRST_N_TOKENS Operation
 
-###### Overview
+##### Overview
 
 The `ITEM_REMOVE_FIRST_N_TOKENS` operation provides users with a mechanism to remove a specified number of tokens from the beginning of an item's token list.
 
-###### Parameters
+##### Parameters
 
 - **itemId (String)**
 
@@ -556,13 +552,13 @@ The `ITEM_REMOVE_FIRST_N_TOKENS` operation provides users with a mechanism to re
     - Must be a positive integer.
     - Should not exceed the total number of tokens in the specified item.
 
-##### ITEM_REMOVE_LAST_N_TOKENS Operation
+#### ITEM_REMOVE_LAST_N_TOKENS Operation
 
-###### Overview
+##### Overview
 
 The `ITEM_REMOVE_LAST_N_TOKENS` operation offers a straightforward method for users to eliminate a defined number of tokens from the end of a specific item's token list.
 
-###### Parameters
+##### Parameters
 
 - **itemId (String)**
 
@@ -576,13 +572,13 @@ The `ITEM_REMOVE_LAST_N_TOKENS` operation offers a straightforward method for us
     - Must be a positive integer.
     - Should not surpass the total count of tokens present in the denoted item.
 
-##### ITEM_SELECT_FIRST_N_TOKENS Operation
+#### ITEM_SELECT_FIRST_N_TOKENS Operation
 
-###### Overview
+##### Overview
 
 The `ITEM_SELECT_FIRST_N_TOKENS` operation allows users to refine an item's token list by retaining only the first "N" tokens and discarding the rest.
 
-###### Parameters
+##### Parameters
 
 - **itemId (String)**
 
@@ -596,13 +592,13 @@ The `ITEM_SELECT_FIRST_N_TOKENS` operation allows users to refine an item's toke
     - Must be a positive integer.
     - Should not exceed the total number of tokens in the specified item.
 
-##### ITEM_SELECT_LAST_N_TOKENS Operation
+#### ITEM_SELECT_LAST_N_TOKENS Operation
 
-###### Overview
+##### Overview
 
 The `ITEM_SELECT_LAST_N_TOKENS` operation equips users with the ability to retain only the last "N" tokens from an item's list, discarding all preceding tokens.
 
-###### Parameters
+##### Parameters
 
 - **itemId (String)**
 
@@ -616,13 +612,13 @@ The `ITEM_SELECT_LAST_N_TOKENS` operation equips users with the ability to retai
     - Must be a positive integer.
     - Should not exceed the total number of tokens in the chosen item.
 
-##### ITEM_REMOVE_FIRST_N_WALLETS Operation
+#### ITEM_REMOVE_FIRST_N_WALLETS Operation
 
-###### Overview
+##### Overview
 
 The `ITEM_REMOVE_FIRST_N_WALLETS` operation provides a way for users to trim their item's wallet list by removing the first "N" wallets.
 
-###### Parameters
+##### Parameters
 
 - **itemId (String)**
 
@@ -636,13 +632,13 @@ The `ITEM_REMOVE_FIRST_N_WALLETS` operation provides a way for users to trim the
     - Must be a positive integer.
     - Should not exceed the total number of wallets in the specified item.
 
-##### ITEM_SELECT_FIRST_N_WALLETS Operation
+#### ITEM_SELECT_FIRST_N_WALLETS Operation
 
-###### Overview
+##### Overview
 
 The `ITEM_SELECT_FIRST_N_WALLETS` operation empowers users to curate an item's wallet list by preserving only the first "N" wallets and discarding all that follow.
 
-###### Parameters
+##### Parameters
 
 - **itemId (String)**
 
@@ -656,13 +652,13 @@ The `ITEM_SELECT_FIRST_N_WALLETS` operation empowers users to curate an item's w
     - Must be a positive integer.
     - Should not exceed the total number of wallets in the designated item.
 
-##### ITEM_REMOVE_WALLETS_FROM_CERTAIN_COMPONENTS Operation
+#### ITEM_REMOVE_WALLETS_FROM_CERTAIN_COMPONENTS Operation
 
-###### Overview
+##### Overview
 
 The `ITEM_REMOVE_WALLETS_FROM_CERTAIN_COMPONENTS` operation lets users refine an item's token list by excluding wallets that have already been given spots from specific components.
 
-###### Parameters
+##### Parameters
 
 - **itemId (String)**
 
@@ -675,13 +671,13 @@ The `ITEM_REMOVE_WALLETS_FROM_CERTAIN_COMPONENTS` operation lets users refine an
   - **Requirements**:
     - Each component ID in the array should be a valid string, referencing existing components within Janus.
 
-##### ITEM_REMOVE_WALLETS_FROM_CERTAIN_TOKEN_POOLS Operation
+#### ITEM_REMOVE_WALLETS_FROM_CERTAIN_TOKEN_POOLS Operation
 
-###### Overview
+##### Overview
 
 The `ITEM_REMOVE_WALLETS_FROM_CERTAIN_TOKEN_POOLS` operation allows users to refine an item's token list by excluding wallets that are associated with the specified token pools.
 
-###### Parameters
+##### Parameters
 
 - **itemId (String)**
 
@@ -706,13 +702,13 @@ The `ITEM_REMOVE_WALLETS_FROM_CERTAIN_TOKEN_POOLS` operation allows users to ref
       - **Requirements**:
         - Must be a valid string, referencing an existing pool within Janus.
 
-##### COMPONENT_SELECT_RANDOM_WALLETS Operation
+#### COMPONENT_SELECT_RANDOM_WALLETS Operation
 
-###### Overview
+##### Overview
 
 The `COMPONENT_SELECT_RANDOM_WALLETS` operation offers a method to diversify and inject an element of randomness into your NFT distribution plans. By targeting a specific component, users can select a random set of wallets from the combined pool of all wallets in the component's items. Only the selected wallets are retained, and all others are excluded, ensuring that a randomized subset of wallets is prioritized for distribution.
 
-###### Parameters
+##### Parameters
 
 - **componentId (String)**
 
@@ -732,13 +728,13 @@ The `COMPONENT_SELECT_RANDOM_WALLETS` operation offers a method to diversify and
   - **Requirements**:
     - Must be a valid string.
 
-##### COMPONENT_SELECT_RANDOM_PERCENTAGE_WALLETS Operation
+#### COMPONENT_SELECT_RANDOM_PERCENTAGE_WALLETS Operation
 
-###### Overview
+##### Overview
 
 The `COMPONENT_SELECT_RANDOM_PERCENTAGE_WALLETS` operation provides users with a method to select a random subset of wallets based on a percentage of the total wallets within a given component's items.
 
-###### Parameters
+##### Parameters
 
 - **componentId (String)**
 
@@ -758,13 +754,13 @@ The `COMPONENT_SELECT_RANDOM_PERCENTAGE_WALLETS` operation provides users with a
   - **Requirements**:
     - Must be a valid string.
 
-##### COMPONENT_ADD_SPOTS_TO_ALL_ITEM_WALLETS Operation
+#### COMPONENT_ADD_SPOTS_TO_ALL_ITEM_WALLETS Operation
 
-###### Overview
+##### Overview
 
 The `COMPONENT_ADD_SPOTS_TO_ALL_ITEM_WALLETS` operation enhances the adaptability of NFT distribution strategies by allowing users to allocate a specific number of spots to every wallet within a given component's items. This operation simplifies the process of ensuring each wallet receives a predetermined number of spots, thereby maintaining an even distribution mechanism within the component.
 
-###### Parameters
+##### Parameters
 
 - **componentId (String)**
 
